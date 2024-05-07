@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speech Recognition</title>
+</head>
+<body>
+    <button id="start">Start Recognition</button>
+    <button id="end" disabled>Stop Recognition</button>
+    <p id="output"></p>
+
+    <script>
+        const output = document.getElementById('output');
+        const startButton = document.getElementById('start');
+        const endButton = document.getElementById('end');
+        let recognition;
+
+        startButton.addEventListener('click', startRecognition);
+        endButton.addEventListener('click', stopRecognition);
+
+        function startRecognition() {
+            recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.continuous = true;
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[event.results.length - 1][0].transcript;
+                output.textContent += transcript;
+            };
+
+            recognition.onend = function() {
+                startButton.disabled = false;
+                endButton.disabled = true;
+            };
+
+            startButton.disabled = true;
+            endButton.disabled = false;
+            output.textContent = '';
+            recognition.start();
+        }
+
+        function stopRecognition() {
+            if (recognition) {
+                recognition.stop();
+                startButton.disabled = false;
+                endButton.disabled = true;
+                output.textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>
