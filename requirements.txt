@@ -2,3 +2,6 @@ PyAudio==0.2.14
 Requests==2.31.0
 playsound==1.2.2
 python-dotenv==1.0.1
+groq==0.5.0
+edge-tts==6.1.11
+googlesearch-python==1.2.4

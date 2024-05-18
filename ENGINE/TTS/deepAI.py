@@ -2,7 +2,7 @@ import requests
 import playsound
 import os
 
-def speak(text: str, model: str="aura-luna-en", filename: str="ASSETS\output.mp3"):
+def speak(text: str, model: str="aura-athena-en", filename: str="ASSETS/output.mp3"):
     """
     Sends a POST request to the DeepAI Speech API to generate speech response from text.
 
@@ -46,7 +46,7 @@ def speak(text: str, model: str="aura-luna-en", filename: str="ASSETS\output.mp3
 
 if __name__ == "__main__":
 
-    speak("hello, this is luna, Hi kunal how can i help you today?")
+    speak("hello, this is my sample voice. i hope so you like it")
 
     available_models = {
     "Sophia (Female US English)": "aura-asteria-en",

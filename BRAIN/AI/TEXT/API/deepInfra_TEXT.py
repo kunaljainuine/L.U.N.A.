@@ -2,7 +2,7 @@ import json
 import requests
 from typing import Union
 import os
-from dotenv import load_dotenv; load_dotenv()
+from dotenv import load_dotenv; load_dotenv() # Load environment variables from .env file
 
 def generate(message: str, model: str='meta-llama/Meta-Llama-3-70B-Instruct', system_prompt: str = "Be Helpful and Friendly. Keep your response straightfoward, short and concise", max_tokens: int = 512, temperature: float = 0.7) -> Union[str, None]:
     """

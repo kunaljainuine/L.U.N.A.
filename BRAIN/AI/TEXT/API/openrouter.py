@@ -1,7 +1,7 @@
 import requests
 import json
 import os
-from dotenv import load_dotenv; load_dotenv()
+from dotenv import load_dotenv; load_dotenv() # Load environment variables from .env file
 
 
 def generate(query: str, system_prompt: str = "keep your response short and concise" , model: str = "openchat/openchat-7b", max_tokens: int = 8096,  # For Simple Models

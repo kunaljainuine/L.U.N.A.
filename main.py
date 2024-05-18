@@ -2,7 +2,7 @@ from ENGINE.STT.speech_recog import speech_recognition_model, close_driver
 from ENGINE.TTS.deepAI import speak
 #from BRAIN.TEXT.API import openrouter
 from BRAIN.TEXT.API import deepInfra_TEXT
-from BRAIN.IMAGE import deepInfra_IMG
+#from BRAIN.IMAGE import deepInfra_IMG
 
 print('L.U.N.A Ai is Processing!')
 print('Made By: Kunal Jain ~~~')
@@ -14,14 +14,15 @@ try:
         if speech:
             print("Kunal >>", speech)
 
-            speak("Sure Kunal, Generating image for you")
-            images_link = deepInfra_IMG.generate(speech)
-            print(images_link)
+        
+        #ai_response = openrouter.generate(speech)
+        ai_response = deepInfra_TEXT.generate(speech)
+        print("L.U.N.A >>", ai_response)
+        speak(ai_response)
 
-            #ai_response = openrouter.generate(speech)
-            ai_response = deepInfra_TEXT.generate(speech)
-            print("AI >>", ai_response)
-            speak(ai_response)
+        #speak("Sure Kunal, Generating image for you")
+        #images_link = deepInfra_IMG.generate(speech)
+        #print(images_link)
 
 except KeyboardInterrupt:
     print("Exiting...")

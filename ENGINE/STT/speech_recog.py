@@ -7,7 +7,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from time import sleep
 
-# Construct the path to voice.html
 voice_html_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'ASSETS', 'voice.html')
 
 if not os.path.isfile(voice_html_path):
@@ -18,7 +17,6 @@ chrome_options.add_argument("--use-fake-ui-for-media-stream")
 chrome_options.add_argument("--use-fake-device-for-media-stream")
 chrome_options.add_argument("--headless=new")
 
-# Initialize WebDriver only once
 driver = webdriver.Chrome(options=chrome_options)
 driver.get(voice_html_path)
 
